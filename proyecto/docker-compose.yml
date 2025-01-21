@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: tarabita2
+      MYSQL_DATABASE: image_app
+    ports:
+      - "3310:3306"
+    volumes:
+      - db_data:/var/lib/mysql  # Volumen para persistencia de datos
+
+  backend:
+    build:
+      context: ./pageimage
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/image_app
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: tarabita2
+
+  frontend:
+    build:
+      context: ./image-app
+    ports:
+      - "3000:80"
+
+volumes:
+  db_data:  # Definición del volumen
