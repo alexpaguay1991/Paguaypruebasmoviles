@@ -53,8 +53,10 @@ public class ImageService {
         }*/
         // Guardar archivo en el sistema
         // Crear el directorio si no existe
-        //String storagePath1 = "D:/ESCRITORIO/septimo/softwareseguro/parcial2/frontend/image-app/src/images"; // Cambia esta ruta según sea necesario
-        String storagePath1 = "../../../../../../../../image-app/src/images"; // Cambia esta ruta según sea necesario
+        //String storagePath1 = "D:/ESCRITORIO/septimo/softwareseguro/parcial2/frontend/image-app/src/images";
+        String storagePath1 = "C:/Users/User/Documents/GitHub/Paguaypruebasmoviles/proyecto/image-app/src/images";//Cambia esta ruta según sea necesario
+        //C:\Users\User\Documents\GitHub\Paguaypruebasmoviles
+        //String storagePath1 = "../../../../../../../../image-app/src/images"; // Cambia esta ruta según sea necesario
 
         System.out.println("pasa este filtro: ");
         File destinationDir = new File(storagePath1);
